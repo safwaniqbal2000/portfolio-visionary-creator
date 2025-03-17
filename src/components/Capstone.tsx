@@ -1,17 +1,12 @@
-
 import { Code, FileText, Figma, GitBranch } from 'lucide-react';
 import { useInView, ANIMATION_CLASSES } from '@/utils/animations';
 import { Button } from '@/components/ui/button';
-
 const Capstone = () => {
-  const { ref, isInView } = useInView();
-
-  return (
-    <section
-      id="capstone"
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className="py-24 px-4 md:px-8 bg-accent/5"
-    >
+  const {
+    ref,
+    isInView
+  } = useInView();
+  return <section id="capstone" ref={ref as React.RefObject<HTMLDivElement>} className="px-4 md:px-8 bg-accent/5 py-0">
       <div className="container mx-auto max-w-7xl">
         <div className={`text-center mb-16 ${isInView ? ANIMATION_CLASSES.fadeIn : 'opacity-0'}`}>
           <div className="inline-block mb-2 px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-medium">
@@ -29,11 +24,7 @@ const Capstone = () => {
           <div className="space-y-8">
             <div className="bg-card rounded-xl border border-border/50 overflow-hidden">
               <div className="aspect-video bg-accent">
-                <img 
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
-                  alt="Capstone Project Preview"
-                  className="w-full h-full object-cover"
-                />
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Capstone Project Preview" className="w-full h-full object-cover" />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-4">Project Overview</h3>
@@ -143,19 +134,13 @@ const Capstone = () => {
             </div>
 
             <div className="text-center">
-              <Button
-                variant="default"
-                size="lg"
-                className="shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20"
-              >
+              <Button variant="default" size="lg" className="shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20">
                 View Full Project Details
               </Button>
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Capstone;
