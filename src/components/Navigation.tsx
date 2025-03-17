@@ -18,11 +18,11 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: 'About', href: '#about' },
-    { name: 'Resume', href: '#resume' },
+    { name: 'About Me', href: '#about' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Philosophy', href: '#philosophy' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Academic & Professional Work', href: '#projects' },
+    { name: 'Capstone Project', href: '#capstone' },
+    { name: 'Contact Me', href: '#contact' },
   ];
 
   return (

@@ -1,11 +1,16 @@
+
 import { ArrowDown } from 'lucide-react';
 import { useInView, ANIMATION_CLASSES } from '@/utils/animations';
+
 const Hero = () => {
-  const {
-    ref,
-    isInView
-  } = useInView();
-  return <section ref={ref as React.RefObject<HTMLDivElement>} className="relative min-h-screen flex items-center justify-center py-32 px-4 md:px-8" id="hero">
+  const { ref, isInView } = useInView();
+
+  return (
+    <section 
+      ref={ref as React.RefObject<HTMLDivElement>} 
+      className="relative min-h-screen flex items-center justify-center py-32 px-4 md:px-8" 
+      id="hero"
+    >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -inset-[10%] bg-gradient-to-r from-accent/30 via-primary/5 to-secondary/20 blur-3xl opacity-30" />
       </div>
@@ -17,9 +22,13 @@ const Hero = () => {
           </div>
         </div>
         
-        <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight ${ANIMATION_CLASSES.slideUp} animation-delay-200`}>Safwan Iqbal Shahbadi</h1>
+        <h1 className={`text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight tracking-tight ${ANIMATION_CLASSES.slideUp} animation-delay-200`}>
+          Safwan Iqbal Shahbadi
+        </h1>
         
-        <p className={`text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 ${ANIMATION_CLASSES.slideUp} animation-delay-300`}>Software Developer & Data Analysis</p>
+        <p className={`text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 ${ANIMATION_CLASSES.slideUp} animation-delay-300`}>
+          Software Developer & Data Analysis
+        </p>
         
         <div className={`flex flex-col sm:flex-row gap-4 justify-center ${ANIMATION_CLASSES.slideUp} animation-delay-400`}>
           <a href="#projects" className="inline-flex items-center justify-center h-12 px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 hover:bg-primary/90 transition-all duration-300">
@@ -35,6 +44,8 @@ const Hero = () => {
         <span className="text-sm mb-2">Scroll Down</span>
         <ArrowDown size={16} />
       </a>
-    </section>;
+    </section>
+  );
 };
+
 export default Hero;

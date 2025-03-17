@@ -1,85 +1,51 @@
 
 import { useState } from 'react';
-import { Briefcase, GraduationCap, Award, FileText, Download } from 'lucide-react';
+import { Briefcase, GraduationCap, FileText, Download } from 'lucide-react';
 import { useInView, ANIMATION_CLASSES } from '@/utils/animations';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 const Resume = () => {
-  const [activeTab, setActiveTab] = useState('experience');
+  const [activeTab, setActiveTab] = useState('education');
   const { ref, isInView } = useInView();
   
   const tabs = [
-    { id: 'experience', label: 'Experience', icon: Briefcase },
     { id: 'education', label: 'Education', icon: GraduationCap },
-    { id: 'certifications', label: 'Certifications', icon: Award },
+    { id: 'experience', label: 'Experience', icon: Briefcase },
     { id: 'cover-letter', label: 'Cover Letter', icon: FileText },
-  ];
-  
-  const experienceData = [
-    {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      period: "2021 - Present",
-      description: "Lead frontend development for enterprise SaaS products. Manage a team of 5 developers. Implemented performance optimizations resulting in 40% faster page load times.",
-      technologies: ["React", "TypeScript", "GraphQL", "Tailwind CSS"]
-    },
-    {
-      title: "UX Developer",
-      company: "Digital Solutions Agency",
-      period: "2018 - 2021",
-      description: "Designed and developed responsive web applications for various clients. Collaborated closely with design and product teams to implement pixel-perfect interfaces.",
-      technologies: ["JavaScript", "Vue.js", "Figma", "SCSS"]
-    },
-    {
-      title: "Web Developer",
-      company: "Startup Ventures",
-      period: "2016 - 2018",
-      description: "Developed and maintained multiple client websites. Implemented responsive designs and ensured cross-browser compatibility.",
-      technologies: ["HTML/CSS", "JavaScript", "WordPress", "PHP"]
-    }
   ];
   
   const educationData = [
     {
-      degree: "Master of Science in Computer Science",
-      institution: "University of Technology",
-      period: "2014 - 2016",
-      description: "Specialized in Human-Computer Interaction and Web Technologies. Graduated with honors.",
-      achievements: ["GPA: 3.9/4.0", "Research Assistant", "Dean's List"]
+      degree: "Advanced Diploma in Computer Programming and Data Analysis",
+      institution: "George Brown College",
+      period: "2022 - 2025",
+      description: "Comprehensive program focusing on advanced programming concepts and data analysis techniques.",
+      achievements: ["Data Structures & Algorithms", "Database Design & Development", "Web Development", "Mobile Application Development"]
     },
     {
-      degree: "Bachelor of Science in Software Engineering",
-      institution: "State University",
-      period: "2010 - 2014",
-      description: "Comprehensive program covering software development, algorithms, and system design.",
-      achievements: ["Senior Project: E-commerce Platform", "Programming Club President", "Scholarship Recipient"]
+      degree: "Bachelor of Software Engineering",
+      institution: "IUBAT (International University of Business Agriculture and Technology)",
+      period: "Completed",
+      description: "Foundational program covering software engineering principles, programming fundamentals, and system design.",
+      achievements: ["Software Development", "System Analysis", "Project Management", "Database Management"]
     }
   ];
   
-  const certificationData = [
+  const experienceData = [
     {
-      name: "AWS Certified Solutions Architect",
-      issuer: "Amazon Web Services",
-      date: "2022",
-      description: "Professional level certification validating expertise in AWS cloud architecture and deployment."
+      title: "Independent Website Developer and Designer",
+      company: "Upwork Online Platform",
+      period: "Current",
+      description: "Designing and developing custom websites for clients on the Upwork platform. Specializing in responsive design and user experience optimization.",
+      technologies: ["HTML/CSS", "JavaScript", "React", "Responsive Design", "UI/UX"]
     },
     {
-      name: "Professional Scrum Master I",
-      issuer: "Scrum.org",
-      date: "2021",
-      description: "Certification demonstrating knowledge of Scrum framework and its application."
-    },
-    {
-      name: "Google UX Design Professional Certificate",
-      issuer: "Google",
-      date: "2020",
-      description: "Comprehensive program covering all aspects of the UX design process."
-    },
-    {
-      name: "Frontend Development Certification",
-      issuer: "freeCodeCamp",
-      date: "2019",
-      description: "Completion of 300+ hours of coursework covering HTML, CSS, JavaScript, and frontend libraries."
+      title: "Web Application Developer",
+      company: "E-Commerce Website of Hotel Rental",
+      period: "Academic Project",
+      description: "Developed a comprehensive e-commerce platform for hotel rentals, implementing booking system, payment processing, and user management features.",
+      technologies: ["React", "Node.js", "MongoDB", "Payment Gateway Integration"]
     }
   ];
   
@@ -95,10 +61,10 @@ const Resume = () => {
             Resume & Credentials
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Professional Experience & Academic Credentials
+            Educational Background & Professional Experience
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            An overview of my professional journey, education, and certifications
+            An overview of my academic journey and professional experience
           </p>
         </div>
         
@@ -123,35 +89,6 @@ const Resume = () => {
         </div>
         
         <div className={`space-y-8 ${isInView ? ANIMATION_CLASSES.slideUp : 'opacity-0'} animation-delay-300`}>
-          {activeTab === 'experience' && (
-            <div className="space-y-10">
-              {experienceData.map((job, index) => (
-                <div 
-                  key={index} 
-                  className="flex flex-col md:flex-row gap-6 md:gap-10"
-                >
-                  <div className="md:w-1/3">
-                    <div className="sticky top-24">
-                      <h3 className="text-xl font-bold">{job.title}</h3>
-                      <p className="text-primary font-medium mt-1">{job.company}</p>
-                      <p className="text-sm text-muted-foreground mt-1">{job.period}</p>
-                    </div>
-                  </div>
-                  <div className="md:w-2/3">
-                    <p className="text-muted-foreground mb-4">{job.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {job.technologies.map((tech, techIndex) => (
-                        <span key={techIndex} className="inline-block px-3 py-1 bg-secondary text-secondary-foreground text-xs font-medium rounded-full">
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-          
           {activeTab === 'education' && (
             <div className="space-y-10">
               {educationData.map((edu, index) => (
@@ -182,23 +119,30 @@ const Resume = () => {
             </div>
           )}
           
-          {activeTab === 'certifications' && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {certificationData.map((cert, index) => (
+          {activeTab === 'experience' && (
+            <div className="space-y-10">
+              {experienceData.map((job, index) => (
                 <div 
                   key={index} 
-                  className="p-6 bg-card rounded-xl border border-border/50 hover:border-primary/20 transition-colors"
+                  className="flex flex-col md:flex-row gap-6 md:gap-10"
                 >
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="text-lg font-bold">{cert.name}</h3>
-                      <p className="text-primary text-sm mt-1">{cert.issuer}</p>
+                  <div className="md:w-1/3">
+                    <div className="sticky top-24">
+                      <h3 className="text-xl font-bold">{job.title}</h3>
+                      <p className="text-primary font-medium mt-1">{job.company}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{job.period}</p>
                     </div>
-                    <span className="text-xs text-muted-foreground px-2 py-1 bg-secondary rounded-full">
-                      {cert.date}
-                    </span>
                   </div>
-                  <p className="text-muted-foreground text-sm mt-4">{cert.description}</p>
+                  <div className="md:w-2/3">
+                    <p className="text-muted-foreground mb-4">{job.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {job.technologies.map((tech, techIndex) => (
+                        <span key={techIndex} className="inline-block px-3 py-1 bg-secondary text-secondary-foreground text-xs font-medium rounded-full">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -209,10 +153,10 @@ const Resume = () => {
               <div className="mb-6 p-8 bg-card rounded-xl border border-border/50">
                 <div className="flex justify-between items-start mb-6">
                   <div>
-                    <h3 className="text-xl font-bold">John Doe</h3>
-                    <p className="text-muted-foreground">Senior Frontend Developer</p>
-                    <p className="text-muted-foreground">123 Main Street, City, State, 12345</p>
-                    <p className="text-muted-foreground">john.doe@example.com | (123) 456-7890</p>
+                    <h3 className="text-xl font-bold">Safwan Iqbal Shahbadi</h3>
+                    <p className="text-muted-foreground">Software Developer & Data Analyst</p>
+                    <p className="text-muted-foreground">123 Main Street, Toronto, ON, M5V 1A1</p>
+                    <p className="text-muted-foreground">safwan.shahbadi@example.com | (123) 456-7890</p>
                   </div>
                   <p className="text-sm text-muted-foreground">October 15, 2023</p>
                 </div>
@@ -220,22 +164,22 @@ const Resume = () => {
                 <div className="mb-6">
                   <p className="font-medium">Hiring Manager</p>
                   <p className="text-muted-foreground">Tech Company Inc.</p>
-                  <p className="text-muted-foreground">456 Technology Blvd, Tech City, TC 67890</p>
+                  <p className="text-muted-foreground">456 Technology Blvd, Toronto, ON, M4W 2E4</p>
                 </div>
                 
                 <div className="space-y-4 text-muted-foreground">
                   <p>Dear Hiring Manager,</p>
                   
                   <p>
-                    I am writing to express my interest in the Senior Frontend Developer position at Tech Company Inc. With over 5 years of experience in frontend development and a strong background in creating intuitive user interfaces, I am confident in my ability to contribute significantly to your team.
+                    I am writing to express my interest in the Software Developer position at Tech Company Inc. With my background in computer programming and data analysis from George Brown College, combined with my practical experience developing websites and web applications, I am confident in my ability to contribute to your team.
                   </p>
                   
                   <p>
-                    Throughout my career, I have consistently delivered high-quality code and user experiences that align with business objectives. At Tech Innovations Inc., I led a team that improved page load performance by 40% and implemented accessibility features that increased our user base by 15%. I am particularly proud of my ability to collaborate effectively with design, product, and backend teams to create cohesive and efficient applications.
+                    Throughout my academic and professional journey, I have developed strong skills in frontend and backend development, with a particular focus on creating responsive and user-friendly interfaces. My experience on the Upwork platform has given me valuable insights into client requirements and the importance of delivering solutions that meet real-world needs.
                   </p>
                   
                   <p>
-                    I am excited about Tech Company Inc.'s mission to revolutionize the industry through innovative technology solutions. My combination of technical expertise and user-focused design thinking makes me well-suited to help your company achieve its goals.
+                    I am particularly excited about Tech Company Inc.'s focus on innovative technology solutions. My combination of technical expertise and analytical thinking makes me well-suited to help your company achieve its goals in developing cutting-edge applications.
                   </p>
                   
                   <p>
@@ -243,31 +187,29 @@ const Resume = () => {
                   </p>
                   
                   <p>Sincerely,</p>
-                  <p>John Doe</p>
+                  <p>Safwan Iqbal Shahbadi</p>
                 </div>
               </div>
               
               <div className="flex justify-center">
-                <a 
-                  href="#" 
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-secondary-foreground rounded-lg text-sm font-medium hover:bg-secondary/70 transition-all"
-                >
+                <Button variant="secondary" size="sm" className="gap-2">
                   <Download size={16} />
                   Download Cover Letter
-                </a>
+                </Button>
               </div>
             </div>
           )}
         </div>
         
         <div className={`flex justify-center mt-12 ${isInView ? ANIMATION_CLASSES.fadeIn : 'opacity-0'} animation-delay-500`}>
-          <a 
-            href="#" 
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 hover:bg-primary/90 transition-all"
+          <Button 
+            variant="primary" 
+            size="lg" 
+            className="gap-2 shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20"
           >
             <Download size={18} />
             Download Full Resume
-          </a>
+          </Button>
         </div>
       </div>
     </section>

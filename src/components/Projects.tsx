@@ -11,55 +11,54 @@ const Projects = () => {
   const projectCategories = [
     { id: 'all', label: 'All Projects' },
     { id: 'web', label: 'Web Development' },
-    { id: 'mobile', label: 'Mobile Apps' },
-    { id: 'design', label: 'UX Design' },
-    { id: 'research', label: 'Research' },
+    { id: 'academic', label: 'Academic Projects' },
+    { id: 'professional', label: 'Professional Work' },
   ];
   
   const projectsData = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      category: ["web"],
+      title: "E-commerce Platform for Hotel Rental",
+      category: ["web", "academic"],
       thumbnail: "https://images.unsplash.com/photo-1523289333742-be1143f6b766?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      description: "A full-featured e-commerce platform with product management, customer accounts, and secure payment processing.",
+      description: "A full-featured e-commerce platform for hotel bookings with user accounts, search functionality, and secure payment processing.",
       skills: ["React", "Node.js", "MongoDB", "Stripe API"],
-      link: "#project/1"
+      link: "#capstone"
     },
     {
       id: 2,
-      title: "Healthcare Mobile App",
-      category: ["mobile", "design"],
+      title: "Responsive Portfolio Website",
+      category: ["web", "professional"],
       thumbnail: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      description: "Mobile application for patients to schedule appointments, access medical records, and communicate with healthcare providers.",
-      skills: ["React Native", "Firebase", "Health API", "Figma"],
+      description: "Custom designed and developed portfolio website showcasing professional achievements and projects.",
+      skills: ["HTML/CSS", "JavaScript", "Responsive Design", "UI/UX"],
       link: "#project/2"
     },
     {
       id: 3,
       title: "Data Visualization Dashboard",
-      category: ["web", "design"],
+      category: ["web", "academic"],
       thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      description: "Interactive dashboard for visualizing and analyzing complex datasets with real-time updates and filtering capabilities.",
-      skills: ["Vue.js", "D3.js", "Chart.js", "WebSockets"],
+      description: "Interactive dashboard for visualizing and analyzing academic data sets with filtering capabilities.",
+      skills: ["React", "D3.js", "Chart.js", "Data Analysis"],
       link: "#project/3"
     },
     {
       id: 4,
-      title: "AI Content Recommendation",
-      category: ["research", "web"],
+      title: "Restaurant Ordering System",
+      category: ["web", "academic"],
       thumbnail: "https://images.unsplash.com/photo-1677442320859-47198a326c11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      description: "Research project exploring machine learning algorithms for content recommendation in digital media platforms.",
-      skills: ["Python", "TensorFlow", "Natural Language Processing", "API Development"],
+      description: "Web application for restaurant menu browsing, ordering, and payment processing.",
+      skills: ["JavaScript", "Firebase", "UI Design", "Payment Integration"],
       link: "#project/4"
     },
     {
       id: 5,
-      title: "Smart Home Control System",
-      category: ["mobile", "web"],
+      title: "Personal Blog Website",
+      category: ["web", "professional"],
       thumbnail: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      description: "Cross-platform application for controlling smart home devices, with scheduling, automation, and energy monitoring features.",
-      skills: ["React", "React Native", "IoT Protocols", "Redux"],
+      description: "Designed and developed a personal blog with content management system and user authentication.",
+      skills: ["React", "Node.js", "CMS Integration", "Authentication"],
       link: "#project/5"
     }
   ];
@@ -83,7 +82,7 @@ const Projects = () => {
             Academic & Professional Work
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            A showcase of my projects, research, and creative work
+            A showcase of my projects, academic work, and professional development
           </p>
         </div>
         
@@ -105,7 +104,7 @@ const Projects = () => {
         </div>
         
         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ${isInView ? ANIMATION_CLASSES.slideUp : 'opacity-0'} animation-delay-300`}>
-          {filteredProjects.map((project, index) => (
+          {filteredProjects.map((project) => (
             <a 
               key={project.id}
               href={project.link}
