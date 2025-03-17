@@ -8,9 +8,7 @@ const About = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className={`space-y-6 ${isInView ? ANIMATION_CLASSES.slideInLeft : 'opacity-0'}`}>
-            <div className="inline-block mb-2 px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-medium">
-              About Me
-            </div>
+            <div className="inline-block mb-2 px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-medium">BIO</div>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-balance">
               A passionate developer with a keen eye for design
             </h2>
