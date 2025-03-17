@@ -203,7 +203,7 @@ const Resume = () => {
         
         <div className={`flex justify-center mt-12 ${isInView ? ANIMATION_CLASSES.fadeIn : 'opacity-0'} animation-delay-500`}>
           <Button 
-            variant="primary" 
+            variant="default" 
             size="lg" 
             className="gap-2 shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20"
           >
