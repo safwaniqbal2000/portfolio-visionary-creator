@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { ExternalLink, ChevronRight } from 'lucide-react';
 import { useInView, ANIMATION_CLASSES } from '@/utils/animations';
@@ -27,33 +26,15 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Responsive Portfolio Website",
-      category: ["web", "professional"],
-      thumbnail: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      description: "Custom designed and developed portfolio website showcasing professional achievements and projects.",
-      skills: ["HTML/CSS", "JavaScript", "Responsive Design", "UI/UX"],
-      link: "#project/2"
+      title: "Quick Park - Parking Management System",
+      category: ["web", "academic"],
+      thumbnail: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      description: "Advanced parking solution that provides real-time availability, reservations, and secure payment integration to enhance urban parking efficiency.",
+      skills: ["HTML/CSS", "JavaScript", "PHP", "MySQL"],
+      link: "#quick-park"
     },
     {
       id: 3,
-      title: "Data Visualization Dashboard",
-      category: ["web", "academic"],
-      thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      description: "Interactive dashboard for visualizing and analyzing academic data sets with filtering capabilities.",
-      skills: ["React", "D3.js", "Chart.js", "Data Analysis"],
-      link: "#project/3"
-    },
-    {
-      id: 4,
-      title: "Restaurant Ordering System",
-      category: ["web", "academic"],
-      thumbnail: "https://images.unsplash.com/photo-1677442320859-47198a326c11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-      description: "Web application for restaurant menu browsing, ordering, and payment processing.",
-      skills: ["JavaScript", "Firebase", "UI Design", "Payment Integration"],
-      link: "#project/4"
-    },
-    {
-      id: 5,
       title: "Personal Blog Website",
       category: ["web", "professional"],
       thumbnail: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
@@ -150,10 +131,10 @@ const Projects = () => {
         
         <div className={`mt-16 text-center ${isInView ? ANIMATION_CLASSES.fadeIn : 'opacity-0'} animation-delay-500`}>
           <a 
-            href="#capstone"
+            href="#quick-park"
             className="inline-flex items-center justify-center px-8 py-3 bg-secondary text-secondary-foreground rounded-lg font-medium hover:bg-secondary/70 transition-all"
           >
-            View Capstone Project
+            View Quick Park Project
           </a>
         </div>
       </div>
