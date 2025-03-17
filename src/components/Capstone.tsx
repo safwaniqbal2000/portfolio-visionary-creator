@@ -9,9 +9,7 @@ const Capstone = () => {
   return <section id="capstone" ref={ref as React.RefObject<HTMLDivElement>} className="px-4 md:px-8 bg-accent/5 py-0">
       <div className="container mx-auto max-w-7xl">
         <div className={`text-center mb-16 ${isInView ? ANIMATION_CLASSES.fadeIn : 'opacity-0'}`}>
-          <div className="inline-block mb-2 px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-medium">
-            Capstone Project
-          </div>
+          <div className="inline-block mb-2 px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-medium">Project</div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             Hotel Rental E-Commerce Platform
           </h2>
