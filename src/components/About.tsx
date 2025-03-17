@@ -1,15 +1,10 @@
-
 import { useInView, ANIMATION_CLASSES } from '@/utils/animations';
-
 const About = () => {
-  const { ref, isInView } = useInView();
-  
-  return (
-    <section 
-      id="about" 
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className="py-24 px-4 md:px-8"
-    >
+  const {
+    ref,
+    isInView
+  } = useInView();
+  return <section id="about" ref={ref as React.RefObject<HTMLDivElement>} className="py-24 px-4 md:px-8">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div className={`space-y-6 ${isInView ? ANIMATION_CLASSES.slideInLeft : 'opacity-0'}`}>
@@ -34,19 +29,12 @@ const About = () => {
           
           <div className={`relative ${isInView ? ANIMATION_CLASSES.slideInRight : 'opacity-0'}`}>
             <div className="aspect-square rounded-2xl overflow-hidden bg-accent">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" 
-                alt="Professional portrait" 
-                className="w-full h-full object-cover"
-                loading="lazy"
-              />
+              <img alt="Professional portrait" className="w-full h-full object-cover" loading="lazy" src="/lovable-uploads/5e0922f1-6fd5-490e-be43-2b9f0acefe26.jpg" />
             </div>
             <div className="absolute inset-0 border-2 border-foreground rounded-2xl -translate-x-4 -translate-y-4 z-[-1]"></div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;

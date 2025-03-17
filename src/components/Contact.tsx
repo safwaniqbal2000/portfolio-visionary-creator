@@ -1,37 +1,40 @@
-
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
 import { useInView, ANIMATION_CLASSES } from '@/utils/animations';
-
 const Contact = () => {
-  const { ref, isInView } = useInView();
+  const {
+    ref,
+    isInView
+  } = useInView();
   const [formState, setFormState] = useState({
     name: '',
     email: '',
     message: ''
   });
-  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormState(prev => ({ ...prev, [name]: value }));
+    const {
+      name,
+      value
+    } = e.target;
+    setFormState(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
-  
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Form submission logic would go here
     console.log('Form submitted:', formState);
     // Reset form
-    setFormState({ name: '', email: '', message: '' });
+    setFormState({
+      name: '',
+      email: '',
+      message: ''
+    });
     // Show success message
     alert('Message sent successfully!');
   };
-  
-  return (
-    <section 
-      id="contact" 
-      ref={ref as React.RefObject<HTMLDivElement>}
-      className="py-24 px-4 md:px-8"
-    >
+  return <section id="contact" ref={ref as React.RefObject<HTMLDivElement>} className="py-24 px-4 md:px-8">
       <div className="container mx-auto max-w-6xl">
         <div className={`text-center mb-16 ${isInView ? ANIMATION_CLASSES.fadeIn : 'opacity-0'}`}>
           <div className="inline-block mb-2 px-4 py-1.5 bg-accent text-accent-foreground rounded-full text-sm font-medium">
@@ -61,7 +64,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">Email</p>
-                      <p className="font-medium">john.doe@example.com</p>
+                      <p className="font-medium">safwaniqbalshahbadi2000@gmail.com</p>
                     </div>
                   </div>
                   
@@ -71,7 +74,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                      <p className="font-medium">(123) 456-7890</p>
+                      <p className="font-medium">
+                    </p>
                     </div>
                   </div>
                   
@@ -81,7 +85,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground mb-1">Location</p>
-                      <p className="font-medium">San Francisco, CA</p>
+                      <p className="font-medium">Toronto, ON</p>
                     </div>
                   </div>
                 </div>
@@ -129,32 +133,14 @@ const Contact = () => {
                   <label htmlFor="name" className="text-sm font-medium">
                     Your Name
                   </label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formState.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                    placeholder="John Doe"
-                  />
+                  <input id="name" name="name" type="text" value={formState.name} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-input bg-background placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors" placeholder="John Doe" />
                 </div>
                 
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium">
                     Your Email
                   </label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formState.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-input bg-background placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors"
-                    placeholder="john.doe@example.com"
-                  />
+                  <input id="email" name="email" type="email" value={formState.email} onChange={handleChange} required className="w-full px-4 py-3 rounded-lg border border-input bg-background placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors" placeholder="john.doe@example.com" />
                 </div>
               </div>
               
@@ -162,22 +148,10 @@ const Contact = () => {
                 <label htmlFor="message" className="text-sm font-medium">
                   Message
                 </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formState.message}
-                  onChange={handleChange}
-                  required
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-input bg-background placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors resize-none"
-                  placeholder="Your message here..."
-                />
+                <textarea id="message" name="message" value={formState.message} onChange={handleChange} required rows={5} className="w-full px-4 py-3 rounded-lg border border-input bg-background placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors resize-none" placeholder="Your message here..." />
               </div>
               
-              <button 
-                type="submit"
-                className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 hover:bg-primary/90 transition-all"
-              >
+              <button type="submit" className="inline-flex items-center justify-center gap-2 w-full md:w-auto px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium shadow-lg shadow-primary/10 hover:shadow-xl hover:shadow-primary/20 hover:bg-primary/90 transition-all">
                 <Send size={18} />
                 Send Message
               </button>
@@ -185,8 +159,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
