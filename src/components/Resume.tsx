@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Briefcase, GraduationCap, FileText, Download } from 'lucide-react';
+import { Briefcase, GraduationCap, Download } from 'lucide-react';
 import { useInView, ANIMATION_CLASSES } from '@/utils/animations';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -12,7 +12,6 @@ const Resume = () => {
   const tabs = [
     { id: 'education', label: 'Education', icon: GraduationCap },
     { id: 'experience', label: 'Experience', icon: Briefcase },
-    { id: 'cover-letter', label: 'Cover Letter', icon: FileText },
   ];
   
   const educationData = [
@@ -145,58 +144,6 @@ const Resume = () => {
                   </div>
                 </div>
               ))}
-            </div>
-          )}
-          
-          {activeTab === 'cover-letter' && (
-            <div className="max-w-3xl mx-auto">
-              <div className="mb-6 p-8 bg-card rounded-xl border border-border/50">
-                <div className="flex justify-between items-start mb-6">
-                  <div>
-                    <h3 className="text-xl font-bold">Safwan Iqbal Shahbadi</h3>
-                    <p className="text-muted-foreground">Software Developer & Data Analyst</p>
-                    <p className="text-muted-foreground">123 Main Street, Toronto, ON, M5V 1A1</p>
-                    <p className="text-muted-foreground">safwan.shahbadi@example.com | (123) 456-7890</p>
-                  </div>
-                  <p className="text-sm text-muted-foreground">October 15, 2023</p>
-                </div>
-                
-                <div className="mb-6">
-                  <p className="font-medium">Hiring Manager</p>
-                  <p className="text-muted-foreground">Tech Company Inc.</p>
-                  <p className="text-muted-foreground">456 Technology Blvd, Toronto, ON, M4W 2E4</p>
-                </div>
-                
-                <div className="space-y-4 text-muted-foreground">
-                  <p>Dear Hiring Manager,</p>
-                  
-                  <p>
-                    I am writing to express my interest in the Software Developer position at Tech Company Inc. With my background in computer programming and data analysis from George Brown College, combined with my practical experience developing websites and web applications, I am confident in my ability to contribute to your team.
-                  </p>
-                  
-                  <p>
-                    Throughout my academic and professional journey, I have developed strong skills in frontend and backend development, with a particular focus on creating responsive and user-friendly interfaces. My experience on the Upwork platform has given me valuable insights into client requirements and the importance of delivering solutions that meet real-world needs.
-                  </p>
-                  
-                  <p>
-                    I am particularly excited about Tech Company Inc.'s focus on innovative technology solutions. My combination of technical expertise and analytical thinking makes me well-suited to help your company achieve its goals in developing cutting-edge applications.
-                  </p>
-                  
-                  <p>
-                    I would welcome the opportunity to discuss how my skills and experience align with your needs. Thank you for considering my application.
-                  </p>
-                  
-                  <p>Sincerely,</p>
-                  <p>Safwan Iqbal Shahbadi</p>
-                </div>
-              </div>
-              
-              <div className="flex justify-center">
-                <Button variant="secondary" size="sm" className="gap-2">
-                  <Download size={16} />
-                  Download Cover Letter
-                </Button>
-              </div>
             </div>
           )}
         </div>
