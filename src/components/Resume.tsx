@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Briefcase, GraduationCap, Download } from 'lucide-react';
+import { Briefcase, GraduationCap, Download, Award, Heart } from 'lucide-react';
 import { useInView, ANIMATION_CLASSES } from '@/utils/animations';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
@@ -12,6 +12,8 @@ const Resume = () => {
   const tabs = [
     { id: 'education', label: 'Education', icon: GraduationCap },
     { id: 'experience', label: 'Experience', icon: Briefcase },
+    { id: 'achievements', label: 'Achievements', icon: Award },
+    { id: 'volunteer', label: 'Volunteer Work', icon: Heart },
   ];
   
   const educationData = [
@@ -47,6 +49,42 @@ const Resume = () => {
       technologies: ["React", "Node.js", "MongoDB", "Payment Gateway Integration"]
     }
   ];
+
+  const achievementsData = [
+    {
+      title: "Dean's List for Academic Excellence",
+      organization: "George Brown College",
+      year: "2023",
+      description: "Recognized for maintaining a GPA above 3.8 throughout the academic year."
+    },
+    {
+      title: "Web Development Certification",
+      organization: "Udemy",
+      year: "2022",
+      description: "Completed advanced web development certification covering modern frontend frameworks and backend technologies."
+    },
+    {
+      title: "Best Project Award",
+      organization: "IUBAT Software Engineering Department",
+      year: "2021",
+      description: "Awarded for developing an innovative software solution addressing real-world problems."
+    }
+  ];
+
+  const volunteerData = [
+    {
+      role: "Tech Mentor",
+      organization: "Local Community Center",
+      period: "2022 - Present",
+      description: "Providing free coding lessons and tech support to underprivileged youth, helping them develop digital literacy skills."
+    },
+    {
+      role: "Web Developer Volunteer",
+      organization: "Non-Profit Organization",
+      period: "2021",
+      description: "Developed and maintained website for a local non-profit organization, improving their online presence and digital outreach."
+    }
+  ];
   
   return (
     <section 
@@ -60,10 +98,10 @@ const Resume = () => {
             Resume & Credentials
           </div>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Educational Background & Professional Experience
+            Career Goals & Professional Journey
           </h2>
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            An overview of my academic journey and professional experience
+            My goal is to become a leading software developer specializing in creating innovative, user-friendly applications that solve real-world problems.
           </p>
         </div>
         
@@ -141,6 +179,50 @@ const Resume = () => {
                         </span>
                       ))}
                     </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {activeTab === 'achievements' && (
+            <div className="space-y-10">
+              {achievementsData.map((achievement, index) => (
+                <div 
+                  key={index} 
+                  className="flex flex-col md:flex-row gap-6 md:gap-10"
+                >
+                  <div className="md:w-1/3">
+                    <div className="sticky top-24">
+                      <h3 className="text-xl font-bold">{achievement.title}</h3>
+                      <p className="text-primary font-medium mt-1">{achievement.organization}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{achievement.year}</p>
+                    </div>
+                  </div>
+                  <div className="md:w-2/3">
+                    <p className="text-muted-foreground">{achievement.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {activeTab === 'volunteer' && (
+            <div className="space-y-10">
+              {volunteerData.map((volunteer, index) => (
+                <div 
+                  key={index} 
+                  className="flex flex-col md:flex-row gap-6 md:gap-10"
+                >
+                  <div className="md:w-1/3">
+                    <div className="sticky top-24">
+                      <h3 className="text-xl font-bold">{volunteer.role}</h3>
+                      <p className="text-primary font-medium mt-1">{volunteer.organization}</p>
+                      <p className="text-sm text-muted-foreground mt-1">{volunteer.period}</p>
+                    </div>
+                  </div>
+                  <div className="md:w-2/3">
+                    <p className="text-muted-foreground">{volunteer.description}</p>
                   </div>
                 </div>
               ))}

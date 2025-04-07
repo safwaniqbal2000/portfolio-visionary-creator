@@ -18,7 +18,7 @@ const Hero = () => {
       <div className={`container mx-auto max-w-4xl text-center z-10 ${isInView ? 'opacity-100' : 'opacity-0'} transition-opacity duration-1000`}>
         <div className={`${ANIMATION_CLASSES.fadeIn}`}>
           <div className="inline-block mb-6 px-4 py-1.5 bg-primary/10 text-primary rounded-full text-sm font-medium">
-            Professional Portfolio
+            Welcome to My Portfolio
           </div>
         </div>
         
@@ -26,8 +26,12 @@ const Hero = () => {
           Safwan Iqbal Shahbadi
         </h1>
         
-        <p className={`text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-10 ${ANIMATION_CLASSES.slideUp} animation-delay-300`}>
-          Software Developer & Data Analysis
+        <p className={`text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-6 ${ANIMATION_CLASSES.slideUp} animation-delay-300`}>
+          Software Developer & Data Analysis Specialist
+        </p>
+
+        <p className={`text-lg text-muted-foreground max-w-3xl mx-auto mb-10 ${ANIMATION_CLASSES.slideUp} animation-delay-350`}>
+          Welcome to my professional portfolio showcasing my skills, projects, and journey in software development and data analysis.
         </p>
         
         <div className={`flex flex-col sm:flex-row gap-4 justify-center ${ANIMATION_CLASSES.slideUp} animation-delay-400`}>
